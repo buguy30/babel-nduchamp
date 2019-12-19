@@ -45,4 +45,4 @@ print(f"Date et Heure {dt} - Année {dt.year}")
 
 printseparator()
 
-help(printseparator())
+# help(printseparator())

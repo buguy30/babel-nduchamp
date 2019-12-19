@@ -12,7 +12,7 @@ print(len_listnames)
 if len_listnames == 2:
     print("Prénom " + names[0] + " Nom: " + names[1])
 elif len_listnames == 3:
-    print(f"Prénom {names[0]}, Milieu {names[1]} Nom {names[2]}")
+    print(f"Prénom {names[0]}, Milieu {names[1]}, Nom {names[2]}")
 elif len_listnames == 1:
     print("Nom seul : " + names[0])
 else:

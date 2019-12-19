@@ -44,13 +44,12 @@ def validate(fullname):
     """
     names = fullname.split()
     len_listnames = len(names)
-    # vérifier que chaque str de names ne comporte que des lettres de l'alphabet
+    # vérifier que chaque string de names ne comporte que des lettres de l'alphabet
     type(names)
     for n in names:
-        # n = n.strip() # enlève les espaces devant, derrière
-        if not validate_string(n)
-            # return error
-            return {F_ERROR: "Erreur de validation sur" + n}
+        n = n.strip()  # enlève les espaces devant, derrière
+        if not validate_string(n):
+            return {F_ERROR: "Erreur de validation sur " + n}
 
     d = {}
     if len_listnames == 2:

@@ -24,9 +24,10 @@ F_ERROR = "error"
 
 
 def validate_string(input):
-    # si la string input contient juste des caractere az sa renvoi true sinon false
+    """si la string input contient juste des caractères az ça renvoi true sinon false
+    """
     # si vide
-    # enles les espaces
+    # enlève les espaces
     # regarde si AZ ou az
     print(input)
     if not len(input):
@@ -42,7 +43,7 @@ def validate(fullname):
     """
     names = fullname.split()
     len_listnames = len(names)
-    # verifier que chaque string de names ne comporte que des lettres de l'alphabet
+    # vérifier que chaque string de names ne comporte que des lettres de l'alphabet
     type(names)
     for n in names:
         n = n.strip()  # enleve les espaces devant, derriere
