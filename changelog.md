@@ -34,5 +34,26 @@ _______________________________________________________________
 
  19/12/2019
  ---------------------------------------------------------------
- - 
- _______________________________________________________________
+ - package BeautifulSoup : 
+    vient de pypi.org - installé avec pip
+    -> outil de scraping : récupère les contenus du web
+    -> format HTML en entrée
+        -> analyse le DOM (Document Object Model)
+        -> organise les balises HTML en un arbre
+        -> soup.title
+        -> soup.findall (H1, class, p, id...)
+- débuguer :
+    -> script exécuté sous windows, accès autorisé
+    -> enlever le warning W291 (mettre un \n en fin de pose) chez Flake8 -> Lint
+- Pipenv -> VirtualEnvironnement
+    -> environnement Python "propre" (version précise) = version downloadable de Python.org
+    -> répertoire de stockage de votre environnement se trouve dans /user/utilisateur...
+    -> Pipfile : version humaine
+    -> Pipfile.lock : version machine
+    -> connecté à pypi.org
+- Consulter les sources opensource de python dont datetime.py
+    \python38\lib\...
+- Package request
+    HTTP get url...
+- Blake -> aide à la réindentation et àla cosmétique, la lisibilité du code Format
+    _______________________________________________________________
