@@ -29,12 +29,12 @@ _______________________________________________________________
 - Syntaxe du while
 - Tester la classe d'un objet isintance (a, class)
 - Readme.md en format markdown
- _______________________________________________________________
+_______________________________________________________________
 
 
- 19/12/2019
- ---------------------------------------------------------------
- - package BeautifulSoup : 
+19/12/2019
+---------------------------------------------------------------
+- package BeautifulSoup : 
     vient de pypi.org - installé avec pip
     -> outil de scraping : récupère les contenus du web
     -> format HTML en entrée
@@ -56,4 +56,17 @@ _______________________________________________________________
 - Package request
     HTTP get url...
 - Blake -> aide à la réindentation et àla cosmétique, la lisibilité du code Format
-    _______________________________________________________________
+__________________________________________________________________
+
+20/12/2019
+------------------------------------------------------------------
+- Django 2h :
+    - create superuser admin :  ~ authentification
+                                ~ crud
+                                ~ model (bdd)
+    - create user
+    - settings.py (config Django)
+    - view home : affiche contenu json checkurl
+        py def home() -> url
+    - template home.html
+    
