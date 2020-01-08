@@ -55,8 +55,9 @@ _______________________________________________________________
     \python38\lib\...
 - Package request
     HTTP get url...
-- Blake -> aide à la réindentation et àla cosmétique, la lisibilité du code Format
+- Blake -> aide à la réindentation et à la cosmétique, la lisibilité du code Format
 __________________________________________________________________
+
 
 20/12/2019
 ------------------------------------------------------------------
@@ -69,4 +70,33 @@ __________________________________________________________________
     - view home : affiche contenu json checkurl
         py def home() -> url
     - template home.html
-    
+__________________________________________________________________
+
+
+07/01/2020
+------------------------------------------------------------------
+Construction interface backoffice pour la gestion du catalogue d'une médiathèque
+Fichiers : admin.py, models.py
+- Algorithme tuple
+- Modèle BDD
+    -> définition ORM des champs et relations dans SQL table
+    -> propriétés, attributs, variables
+    -> fonctions préalables héritées de la classe models.Model
+    -> nos fonctions
+- images
+- amélioration interface-utilisateur et de l'existence utilisateur
+        -> admin table Publication, Author, Dewey
+        -> aide à la saisie
+- architecture
+    -> besoin du client
+    -> expression schéma utilisateur (2 persona)
+    -> nomenclature code et entreprise
+    -> objet
+- Dewey :
+    -> classement niveau 2 (800 catégories)
+    besoin d'un fichier csv ou xls
+    -> code couleur
+- Publication
+    -> ISBN
+    -> Statut (emprunté, disponible)
+        Intégration au système existant
