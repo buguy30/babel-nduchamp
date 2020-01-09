@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext as _
 from .models import Author, Publication, Dewey
 
 
@@ -13,6 +14,7 @@ class PublicationAdmin(admin.ModelAdmin):
         "date_publication",
         "label_editor",
     )
+
     fields_reference = ("type_publication", "dewey_number", ("isbn", "reference"))
     fields_publication = ("name", "author", "label_editor")
     fields_detail = (
@@ -21,15 +23,19 @@ class PublicationAdmin(admin.ModelAdmin):
         "content", 
         "image_file", 
         "image_url"
-    ),
+    )
 
     fieldsets = (
-        ("Reference", {"fields": fields_reference}),
+        (_("Reference"), {"fields": fields_reference}),
+
         ("Publication", {"fields": fields_publication}),
         ("Detail", {"fields": fields_detail, "classes": ("collapse",)}),
     )
     readonly_fields = ("reference",)
     radio_fields = {"type_publication": admin.HORIZONTAL}
+    autocomplete_fields = ["author", "dewey_number"]
+    search_fields = ["name"]
+    list_filter = ("dewey_number__number", "author__last_name")
 
 
 class AuthorAdmin(admin.ModelAdmin):
@@ -56,13 +62,18 @@ class AuthorAdmin(admin.ModelAdmin):
         ("Died", {"fields": fields_death, "classes": ("collapse",)}),
     )
     readonly_fields = ("century_birth",)
+    search_fields = ['last_name', "first_name"]
+    list_filter = ("century_birth",)
 
 
 class DeweyAdmin(admin.ModelAdmin):
     list_display = (
         "number",
         "name",
+        "colored_number",
     )
+
+    search_fields = ['number', "name"]
 
 
 admin.site.register(Author, AuthorAdmin)

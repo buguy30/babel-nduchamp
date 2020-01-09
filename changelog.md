@@ -100,3 +100,22 @@ Fichiers : admin.py, models.py
     -> ISBN
     -> Statut (emprunté, disponible)
         Intégration au système existant
+__________________________________________________________________
+
+
+08/01/2020
+------------------------------------------------------------------
+- Algorithme pour déterminer le siècle en fonction d'une date
+- BDD : modèle de l'application, catalogue : (makemigrations, migrate)
+    - Dewey
+    - Author
+    - Publication
+- Author ajout de la fonction siècle
+- Dewey : fonction pour le code couleur du classement
+- Saisie formulaire :
+    - réflexion sur les choix à prendre sur les fonctionalités à intégrer
+        - parfois des dév spécifiques s'évitent par formation/accompagnement de l'utilisation final
+        - retour de l'expérience métier, permet de corriger ou orienter le dév
+        - regrouper en temps 1,2,3 les dév 
+- Admin formulaire = définition d'un modèle (table)
+- Admin regrouper en section zone de saisie

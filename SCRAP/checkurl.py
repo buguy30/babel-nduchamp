@@ -178,8 +178,9 @@ if __name__ == "__main__":
 
     listedesurls = [
         "https://www.midilibre.fr/",
-        "https://www.objectifgard.com/",
         "https://www.20minutes.fr/",
+        "https://www.mediapart.fr/",
+        "https://www.marianne.net/",
     ]
 
     get_urls(listedesurls, False)
