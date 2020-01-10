@@ -119,3 +119,23 @@ __________________________________________________________________
         - regrouper en temps 1,2,3 les dév 
 - Admin formulaire = définition d'un modèle (table)
 - Admin regrouper en section zone de saisie
+__________________________________________________________________
+
+
+09/01/2020
+------------------------------------------------------------------
+- Algo pour récupérer les données via la techno de scrapping html à à partir d'une URL :
+    - titre
+    - meta description du <head>
+    - image meta opengraph
+    - url
+- Django html : création d'un composant html pour afficher les données liste de scrap url
+- Settings Django
+    - Media : transfert de fichier, d'image dit utilisateur, file upload
+    - Static : 
+        - CSS, js, font, jpg
+        - ressources statique de l'application
+        - accès public
+ - Eléments html -> interface utilisateur
+ - Traduction des libellés d'anglais à français sur les formulaires (auteur, publication, dewey)
+ - Fonction couleur pour associer les couleurs au code selon la convention Dewey
