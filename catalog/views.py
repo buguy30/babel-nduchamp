@@ -32,7 +32,7 @@ def publication(request):
     context_page = {
         "global": CONTEXT_GLOBAL, 
         "local": context_local, 
-        'dewey_object': record, 
+        # 'dewey_object': record, 
         "dewey_object_list": record_list,
         "publication_object_list": publication_list,
     }
