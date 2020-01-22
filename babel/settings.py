@@ -31,7 +31,7 @@ print(f'BASE_DIR = {BASE_DIR}, {env_path}')
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG_DJANGO', "0")
+DEBUG = strtobool(os.getenv('DEBUG_DJANGO', "0"))
 
 if DEBUG:
     print("MODE DEBUG !!")
@@ -84,16 +84,21 @@ WSGI_APPLICATION = 'babel.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+USE_LOCAL_DB = strtobool(os.getenv('USE_LOCAL_DB', '0'))
+if USE_LOCAL_DB:
+    print('USE LOCAL DB')
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
+    }
+else:
+    DATABASES = {
+        "default": dj_database_url.config(),
+    }
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
-DATABASES = {
-    # si j'utilise la base sqllite3
-    # 'default': {
-    # 'ENGINE': 'django.db.backends.sqlite3',
-    # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    "default":dj_database_url.config()
-}
-
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -140,3 +145,6 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "files_media")
 
 print(f'STATIC = {STATIC_ROOT}')
+
+if not USE_LOCAL_DB:
+    django_heroku.settings(locals())

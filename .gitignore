@@ -1,5 +1,5 @@
 # Static
-staticfiles
+staticfiles/
 
 # Visual Code
 *.code-workspace
