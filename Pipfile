@@ -4,12 +4,23 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+flake8 = "*"
+black = "*"
 
 [packages]
 requests = "*"
+bs4 = "*"
 lxml = "*"
+pyyaml = "*"
+markdown = "*"
 django = "*"
+beautifulsoup4 = "*"
 pillow = "*"
+xlrd = "*"
+gunicorn = "*"
+django-heroku = "*"
+dj-database-url = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.8"
