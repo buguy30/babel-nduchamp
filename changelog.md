@@ -139,3 +139,14 @@ __________________________________________________________________
  - Eléments html -> interface utilisateur
  - Traduction des libellés d'anglais à français sur les formulaires (auteur, publication, dewey)
  - Fonction couleur pour associer les couleurs au code selon la convention Dewey
+__________________________________________________________________
+
+
+10/01/2020
+------------------------------------------------------------------
+- Front template HTML
+- Query liste de données
+- urls : aiguillage d'urls
+- structure des données, des tables
+- backoffice pour l'admin
+

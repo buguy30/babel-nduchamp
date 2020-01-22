@@ -1,8 +1,43 @@
-Liste des publications :
-<hr>
+{% comment %}
+    {% for publication_record in publication_object_list %}
+        {{ publication_record }} <br>
+    {% endfor %}
+{% endcomment %}
 
-{% for publication_record in publication_object_list %}
 
-    {{ publication_record}} <br>
+<div class="publication-list">
 
-{% endfor %}
+{% if publication_count %}
+<h2>{{publication_count}} publications </h2>
+{%else%}
+<h2>Liste des publications </h2>
+{%endif%}
+
+<table class="table table-sm table-responsive">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Publication</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Type</th>
+      <th scope="col">Editeur/Label</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  {% for publication_record in publication_object_list %}
+    <tr>
+      <td><a href="{% url 'publication-detail-pk' publication_record.pk %}">{{ publication_record.reference }}</a></td>
+      <td>{{ publication_record.name }}</td>
+      <td>{{ publication_record.author }}</td>
+      <td>{{ publication_record.type_publication }}</td>
+      <td>{{ publication_record.label_editor }}</td>
+
+    </tr>
+
+  {% endfor %}
+
+    </tbody>
+</table>
+    
+</div>
