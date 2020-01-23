@@ -1,9 +1,26 @@
 from django.contrib import admin
 from django.utils.translation import gettext as _
 from .models import Author, Publication, Dewey
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
 
 
-class PublicationAdmin(admin.ModelAdmin):
+class AuthorResource(resources.ModelResource):
+    class Meta:
+        model = Author
+
+
+class PublicationResource(resources.ModelResource):
+    class Meta:
+        model = Publication
+
+
+class DeweyResource(resources.ModelResource):
+    class Meta:
+        model = Dewey
+
+
+class PublicationAdmin(ImportExportModelAdmin):
     list_display = (
         "isbn",
         "name",
@@ -36,9 +53,10 @@ class PublicationAdmin(admin.ModelAdmin):
     autocomplete_fields = ["author", "dewey_number"]
     search_fields = ["name"]
     list_filter = ("dewey_number__number", "author__last_name")
+    resource_class = PublicationResource
 
 
-class AuthorAdmin(admin.ModelAdmin):
+class AuthorAdmin(ImportExportModelAdmin):
     list_display = (
         "last_name",
         "first_name",
@@ -64,9 +82,10 @@ class AuthorAdmin(admin.ModelAdmin):
     readonly_fields = ("century_birth",)
     search_fields = ['last_name', "first_name"]
     list_filter = ("century_birth",)
+    resource_class = AuthorResource
 
 
-class DeweyAdmin(admin.ModelAdmin):
+class DeweyAdmin(ImportExportModelAdmin):
     list_display = (
         "number",
         "name",
@@ -74,6 +93,7 @@ class DeweyAdmin(admin.ModelAdmin):
     )
 
     search_fields = ['number', "name"]
+    resource_class = DeweyResource
 
 
 admin.site.register(Author, AuthorAdmin)

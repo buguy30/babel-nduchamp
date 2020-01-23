@@ -149,4 +149,14 @@ __________________________________________________________________
 - urls : aiguillage d'urls
 - structure des données, des tables
 - backoffice pour l'admin
+__________________________________________________________________
 
+
+22/01/2020
+------------------------------------------------------------------
+- cloud hébergement sur serveur
+    - heroku
+    - settings.py
+    - package gunicorn,dj
+    - manage collectstatic
+    
